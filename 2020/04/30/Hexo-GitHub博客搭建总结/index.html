@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo+GitHub博客搭建总结 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文步骤概括参考自B站程序羊，外加个人实际操作过程中碰到的一些问题及最终解决方式 个人电脑系统：win 10 安装的Node.js版本：v12.16.2">
+  <meta name="description" content="本文步骤概括参考自B站程序羊，外加个人实际操作过程中碰到的一些问题及最终解决方式个人电脑系统：win 10安装的Node.js版本：v12.16.2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+GitHub博客搭建总结">
 <meta property="og:url" content="http://yoursite.com/2020/04/30/Hexo-GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="本文步骤概括参考自B站程序羊，外加个人实际操作过程中碰到的一些问题及最终解决方式 个人电脑系统：win 10 安装的Node.js版本：v12.16.2">
+<meta property="og:description" content="本文步骤概括参考自B站程序羊，外加个人实际操作过程中碰到的一些问题及最终解决方式个人电脑系统：win 10安装的Node.js版本：v12.16.2">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-30T06:11:42.000Z">
-<meta property="article:modified_time" content="2020-04-30T06:17:06.061Z">
+<meta property="article:modified_time" content="2020-04-30T07:00:19.695Z">
 <meta property="article:author" content="ll2limx">
 <meta name="twitter:card" content="summary">
   
@@ -170,70 +170,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文步骤概括参考自B站<a href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=8409284778231305269" target="_blank" rel="noopener">程序羊</a>，外加个人实际操作过程中碰到的一些问题及最终解决方式</p>
-<p>个人电脑系统：win 10</p>
-<p>安装的Node.js版本：v12.16.2</p>
+        <p>本文步骤概括参考自B站<a href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=8409284778231305269" target="_blank" rel="noopener">程序羊</a>，外加个人实际操作过程中碰到的一些问题及最终解决方式<br>个人电脑系统：win 10<br>安装的Node.js版本：v12.16.2</p>
 <a id="more"></a>
-
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="需要提前下载的一些软件"><a href="#需要提前下载的一些软件" class="headerlink" title="需要提前下载的一些软件"></a>需要提前下载的一些软件</h4><p>1、从官网下载并安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a>，<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装步骤</a></p>
-<p>(安装好后应当有：node.js和npm。  –&gt;搭建博客必备）</p>
-<p>2、下载并安装git（官网下载太慢了，可以从这个<a href="https://npm.taobao.org/mirrors/git-for-windows/" target="_blank" rel="noopener">网站</a>下载），参考文章：<a href="https://blog.csdn.net/weixin_44198965/article/details/99686507" target="_blank" rel="noopener">git官网下载太慢解决方法</a>，<a href="https://www.jianshu.com/p/bebba0d8038e" target="_blank" rel="noopener">安装步骤</a></p>
-<p>（程序羊的视频中没有安装git这个软件，应该是他电脑里面本来就有安装，我在操作的时候，一开始没有下载安装git，只安装了下文提到的一个git部署插件，然后导致一直停在下文提到的”hexo init”这一步，一直报错：[报错原因]。然后浪费了一些时间，才发现是要先安装git软件才可以<br>3、打开终端界面（cmd），切换到root用户（或者直接“以管理员身份运行”）</p>
-<p>4、在cmd界面中输入”node -v”（引号不用输入）查看node的版本（以验证node.js是否安装成功、环境变量是否有配置好），<br>同理，输入”npm -v”查看npm的版本<br>【Tips：<br>如果显示：”‘node’ 不是内部或外部命令，也不是可运行的程序或批处理文件。”那可能是环境变量没有配置好，[环境变量配置步骤]】</p>
-<p>5、利用npm安装一个cnpm（淘宝源）：在cmd界面中输入”npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org&quot;" target="_blank" rel="noopener">https://registry.npm.taobao.org&quot;</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p><strong><em>需要提前下载的一些软件</em></strong></p>
+<p>1、从官网下载并安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a>，<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装步骤</a><br>(安装好后应当有：node.js和npm。  –&gt;搭建博客必备）</p>
+<p>2、下载并安装git（官网下载太慢了，可以从这个<a href="https://npm.taobao.org/mirrors/git-for-windows/" target="_blank" rel="noopener">网站</a>下载），参考文章：<a href="https://blog.csdn.net/weixin_44198965/article/details/99686507" target="_blank" rel="noopener">git官网下载太慢解决方法</a>，<a href="https://www.jianshu.com/p/bebba0d8038e" target="_blank" rel="noopener">安装步骤</a><br>【程序羊的视频中没有安装git这个软件，应该是他电脑里面本来就有安装，我在操作的时候，一开始没有下载安装git，只安装了下文提到的一个git部署插件，然后导致一直停在下文提到的”hexo init”这一步，一直报错：[报错原因]。然后浪费了一些时间，才发现是要先安装git软件才可以】</p>
+<p>3、打开终端界面（cmd），切换到root用户（或者直接“以管理员身份运行”）</p>
+<p>4、在cmd界面中输入”<strong>node -v</strong>“（引号不用输入）查看node的版本（以验证node.js是否安装成功、环境变量是否有配置好），同理，输入”<strong>npm -v</strong>“查看npm的版本  </p>
+<p>【Tips：<br>如果显示：”<strong>‘node’</strong> 不是内部或外部命令，也不是可运行的程序或批处理文件。”那可能是环境变量没有配置好，[环境变量配置步骤]】</p>
+<p>5、利用npm安装一个cnpm（淘宝源）：在cmd界面中输入”<strong>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></strong>“  </p>
 <p>【因为npm安装插件是从npm官网下载对应的插件包，该网站的服务器在国外，经常会出现下载缓慢或出现异常，这时便需要找到另外的方法提供稳定的下载，这个方法就是cnpm。阿里巴巴的淘宝团队把npm官网的插件都同步到了在中国的服务器，提供给我们从这个服务器上稳定下载资源。】参考自：<a href="https://www.cnblogs.com/yanggb/p/10822420.html" target="_blank" rel="noopener">npm和cnpm的区别</a></p>
-<p>6、cnpm安装结束后在cmd界面中输入”cnpm”可以查看cnpm</p>
-<p>7、借助cnpm安装hexo：在cmd界面中输入”cnpm install -g hexo-cli”</p>
-<p>8、hexo安装结束后，在cmd界面中输入”hexo -v”查看版本以及验证是否安装成功</p>
-<h3 id="本地网站搭建步骤（借助Hexo）"><a href="#本地网站搭建步骤（借助Hexo）" class="headerlink" title="本地网站搭建步骤（借助Hexo）"></a>本地网站搭建步骤（借助Hexo）</h3><h4 id="先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行"><a href="#先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行" class="headerlink" title="先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行"></a>先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行</h4><p>1、在自己想要的位置创建一个空的文件夹，该文件夹用于存放下文步骤中的所有内容，搭建博客过程中的所有东西都在这个文件夹里生成，过程出错了并且找不出错误在哪里的话可以把文件夹删了（或者清空），重新从这一步再开始</p>
-<p>【注：也可以在cmd中直接用命令创建：先进入到你想要创建文件夹的位置，然后输入”md 文件夹的名字”，文件夹就创建成功了】</p>
-<h4 id="2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）"><a href="#2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）" class="headerlink" title="2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）"></a>2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）</h4><p>3、在cmd界面中输入”hexo init”（这表示初始化一个博客），然后等待它加载，加载完成后可以输入”dir”命令，查看当前目录下都有些什么东西</p>
-<p>4、启动hexo：输入”hexo s”，加载完成后会出现一个网址，将网址复制粘贴到浏览器上，可以访问，这个网址就是创建好的本地网站</p>
-<p>5、在博客网站中新建文章：输入”hexo n “文章名字””</p>
-<p>6、修改文章内容：首先进入文章所在目录，然后输入”Notepad++ 文章名字.md”（Notepad++ 表示编辑器的名字，可以改成自己电脑上有的编辑器的名字但是要求这个编辑器在当前目录下或者在环境变量中有进行配置），会弹出Notepad++界面，就可以在里面进行修改【注：.md文件采用markdown格式编写，可以查看[markdown文件编写规则]】，修改完成后保存退出，回到cmd界面</p>
+<p>6、cnpm安装结束后在cmd界面中输入”<strong>cnpm</strong>“可以查看cnpm</p>
+<p>7、借助cnpm安装hexo：在cmd界面中输入”<strong>cnpm install -g hexo-cli</strong>“</p>
+<p>8、hexo安装结束后，在cmd界面中输入”<strong>hexo -v</strong>“查看版本以及验证是否安装成功</p>
+<h3 id="本地网站搭建步骤（借助Hexo）"><a href="#本地网站搭建步骤（借助Hexo）" class="headerlink" title="本地网站搭建步骤（借助Hexo）"></a>本地网站搭建步骤（借助Hexo）</h3><p>（先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行）</p>
+<p>1、在自己想要的位置创建一个空的文件夹，该文件夹用于存放下文步骤中的所有内容，搭建博客过程中的所有东西都在这个文件夹里生成，过程出错了并且找不出错误在哪里的话可以把文件夹删了（或者清空），重新从这一步再开始<br>【注：也可以在cmd中直接用命令创建：先进入到你想要创建文件夹的位置，然后输入”<strong>md 文件夹的名字</strong>“，文件夹就创建成功了】</p>
+<p>2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）</p>
+<p>3、在cmd界面中输入”<strong>hexo init</strong>“（这表示初始化一个博客），然后等待它加载，加载完成后可以输入”<strong>dir</strong>“命令，查看当前目录下都有些什么东西</p>
+<p>4、启动hexo：输入”<strong>hexo s</strong>“，加载完成后会出现一个网址，将网址复制粘贴到浏览器上，可以访问，这个网址就是创建好的本地网站</p>
+<p>5、在博客网站中新建文章：输入”<strong>hexo n “文章名字”</strong>“</p>
+<p>6、修改文章内容：进入文章所在目录，输入”<strong>notepad 文章名字.md</strong>“<br>（notepad表示编辑器的名字，可以改成自己电脑上有的编辑器的名字但是要求这个编辑器在当前目录下或者在环境变量中有进行配置），会弹出notepad界面，就可以在里面进行修改【注：.md文件采用markdown格式编写，可以查看[markdown文件编写规则]】，修改完成后保存退出，回到cmd界面</p>
 <p>7、退回blog目录下</p>
-<p>8、生成：输入”hexo g”</p>
-<h2 id="推送到远端"><a href="#推送到远端" class="headerlink" title="推送到远端"></a>推送到远端</h2><p>将本地网站部署到GitHub上，在别人的电脑或手机上也可以进行访问</p>
+<p>8、生成：输入”<strong>hexo g</strong>“</p>
+<h3 id="推送到远端"><a href="#推送到远端" class="headerlink" title="推送到远端"></a>推送到远端</h3><p>将本地网站部署到GitHub上，在别人的电脑或手机上也可以进行访问</p>
 <p>准备工作：</p>
 <p>1、登录到GitHub上（没有账号的话要先注册一个账号）</p>
-<p>2、新建一个仓库</p>
-<p>仓库命名（用户部署个人博客的GitHub仓库的命名必须符合特定要求）必须是：自己GitHub的注册名.github.io</p>
-<p>【注：注册名不要带有大写字母，因为网址访问有的不分大小写，这样子注册名和网址上的就对应不上，访问的时候会失败】</p>
-<p>描述：随便写</p>
-<p>仓库公共还是私有：公共（public）（选择私有的话，后面hexo进行访问的时候会出错）</p>
-<p>然后创建</p>
-<p>3、回到终端（cmd）界面，进入blog目录下，借助npm安装一个git部署插件”cnpm install –save hexo-deployer-git”</p>
-<p>4、修改blog目录下的_config.yml文件（非常重要！！！）</p>
-<p>可以直接在blog文件夹中使用编辑器打开，或者在cmd里用命令行”Notepad++ _config.yml”打开</p>
+<p>2、新建一个仓库:<br>仓库命名必须是：<strong>自己GitHub的注册名.github.io</strong><br>（用户部署个人博客的GitHub仓库的命名必须符合特定要求）<br><em>【注：注册名不要带有大写字母，因为网址访问有的不分大小写，这样子注册名和网址上的就对应不上，访问的时候会失败】</em><br>描述：随便写<br>仓库公共还是私有：公共（public）<br>（选择私有的话，后面hexo进行访问的时候会出错）<br>然后创建</p>
+<p>3、回到终端（cmd）界面，进入blog目录下，借助npm安装一个git部署插件，输入”<strong>cnpm install –save hexo-deployer-git</strong>“</p>
+<p><strong>4、修改blog目录下的_config.yml文件（非常重要！！！）</strong><br>可以直接在blog文件夹中使用编辑器打开，或者在cmd里用命令行”<strong>notepad _config.yml</strong>“打开</p>
 <p>打开后找到以下内容：（在文件最末尾）</p>
-<p>## Deployment</p>
-<p># Docs:<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></p>
+<pre><code>## Deployment  
+# Docs:https://hexo.io/docs/deployment.html  
+deploy:  
+  type: &apos;&apos;  
+  repo:  
+  branch:      </code></pre><p>改成：<strong>（每个冒号后一定要先打个空格再输入要加入的东西！）</strong></p>
 <pre><code>deploy:
-
-  type: &apos;&apos;
-
-  repo:
-
-  branch:    </code></pre><p>改成：（每个冒号后一定要先打个空格再输入要加入的东西！）</p>
-<pre><code>deploy:
-
   type: git
-
   repo: （填上自己的仓库地址）
-
   branch: master    </code></pre><p>保存退出<br>修改完成</p>
-<h4 id="部署到远端："><a href="#部署到远端：" class="headerlink" title="部署到远端："></a>部署到远端：</h4><p>25、回到cmd界面，输入命令”hexo d”，加载过程中会弹出一个GitHub的界面，你需要在其中输入自己GitHub的账号和密码，全部加载成功后可以回到github仓库看一下，会发现里面多了很多东西（博客生成的内容）<br>在网址栏里面输入仓库名（github用户名.github.io)进行访问，刷新一下，访问成功就部署成功啦！！！</p>
+<p><strong>部署到远端：</strong></p>
+<p>5、回到cmd界面，输入命令”<strong>hexo d</strong>“<br>加载过程中会弹出一个GitHub的界面，你需要在其中输入自己GitHub的账号和密码，全部加载成功后可以回到github仓库看一下，会发现里面多了很多东西（博客生成的内容），在网址栏里面输入仓库名（github用户名.github.io)进行访问，刷新一下，访问成功就部署成功啦！！！</p>
 <h3 id="修改博客主题"><a href="#修改博客主题" class="headerlink" title="修改博客主题"></a>修改博客主题</h3><p>程序羊视频中推荐的主题：github.com/litten/hexo-theme-yilia</p>
 <p>1、cmd界面中进入blog文件夹的目录</p>
-<p>2、下载主题：输入”git clone 下载的主题的地址.git themes/yilia”<br>(这是在blog文件夹下的themes文件夹里创建yilia文件夹，这个文件夹里面就是主题内容）</p>
-<p>3、将主题配置到自己的博客里：cmd界面中回到blog目录下，修改其中的_config.yml文件：输入命令”Notepad++ _config.yml”<br>（或者直接找到这个文件，然后打开它，进行修改）</p>
-<p>在文件中找到：”theme: landscope”，将landscope删掉，改成”yilia”（下载的主题名），即：theme: landscope（注意：冒号后面有个空格！！！）<br>保存后退出</p>
-<p>4、清理：cmd中输入”hexo clean”</p>
-<p>5、生成：cmd中输入”hexo g”</p>
-<p>6、重新启动hexo：cmd中输入”hexo s”</p>
-<p> （操作4、5、6结束后，本地博客地址里面的主题就修改好了，可以在浏览器网址栏输入cmd界面中的网址进行访问，<br> 查看结束后根据cmd界面中的提示，按Ctrl + C退出）</p>
-<p> 7、将修改后的网站推送到远端：cmd中输入”hexo d”</p>
-<p> 加载完成后就可以在浏览器中输入远端网址（自己GitHub注册名.github.io），等待刷新完成后可以看到主题已经修改成功<br> （刷新过程要等一等，或者多刷新几遍，比较慢）</p>
+<p>2、下载主题：输入”<strong>git clone 下载的主题的地址.git themes/yilia</strong>“<br>（这是在blog文件夹下的themes文件夹里创建yilia文件夹，这个文件夹里面就是主题内容）</p>
+<p>3、将主题配置到自己的博客里：cmd界面中回到blog目录下，修改其中的_config.yml文件：输入命令”<strong>notepad _config.yml</strong>“（或者直接找到这个文件，然后打开它，进行修改）<br>在文件中找到：”<strong>theme: landscope</strong>“，将landscope删掉，改成”yilia”（下载的主题名），即：<strong>theme: yilia</strong>（<strong>注意：冒号后面有个空格！！！</strong>）<br>保存后退出</p>
+<p>4、清理：cmd中输入”<strong>hexo clean</strong>“</p>
+<p>5、生成：cmd中输入”<strong>hexo g</strong>“</p>
+<p>6、重新启动hexo：cmd中输入”<strong>hexo s</strong>“  </p>
+<p>（操作4、5、6结束后，本地博客地址里面的主题就修改好了，可以在浏览器网址栏输入cmd界面中的网址进行访问，查看结束后根据cmd界面中的提示，按Ctrl + C退出）</p>
+<p>7、将修改后的网站推送到远端：cmd中输入”<strong>hexo d</strong>“</p>
+<p>加载完成后就可以在浏览器中输入远端网址（自己GitHub注册名.github.io），等待刷新完成后可以看到主题已经修改成功（刷新过程要等一等，或者多刷新几遍，比较慢）</p>
 
       
 
@@ -328,8 +315,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/04/28/%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo + github博客搭建总结</div>
+    <a href="/2020/04/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,7 +343,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-number">1.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需要提前下载的一些软件"><span class="toc-number">1.1.1.</span> <span class="toc-text">需要提前下载的一些软件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地网站搭建步骤（借助Hexo）"><span class="toc-number">1.2.</span> <span class="toc-text">本地网站搭建步骤（借助Hexo）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行"><span class="toc-number">1.2.1.</span> <span class="toc-text">先在hexo搭建好，再借助github推送到远端服务器上。以下所有步骤均在cmd界面上进行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、在cmd界面中进入你创建的那个文件夹的目录下，（我创建的空文件夹名字是：blog，下文均用“blog”代替）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推送到远端"><span class="toc-number">2.</span> <span class="toc-text">推送到远端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到远端："><span class="toc-number">2.0.1.</span> <span class="toc-text">部署到远端：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改博客主题"><span class="toc-number">2.1.</span> <span class="toc-text">修改博客主题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-number">1.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地网站搭建步骤（借助Hexo）"><span class="toc-number">1.2.</span> <span class="toc-text">本地网站搭建步骤（借助Hexo）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推送到远端"><span class="toc-number">1.3.</span> <span class="toc-text">推送到远端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改博客主题"><span class="toc-number">1.4.</span> <span class="toc-text">修改博客主题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
